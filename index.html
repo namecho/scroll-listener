@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        .wrap {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 10px;
+        }
+
+        span {
+            display: block;
+            width: 100px;
+            height: 2px;
+            background: #000;
+            margin: 0 20px;
+        }
+
+        h1 {
+            background: green;
+            color: #fff;
+            padding: 30px;
+        }
+
+        .h1 {
+            display: block;
+            animation: fadeInLeft;
+            animation-duration: 2s;
+        }
+
+        .h2 {
+            display: block;
+            animation: fadeInRight;
+            animation-duration: 3s;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <h1 class="item">你好</h1>
+        <span></span>
+        <h1 class="item">哈哈</h1>
+    </div>
+    <div class="wrap">
+        <h1 class="item">你好</h1>
+        <span></span>
+        <h1 class="item">哈哈</h1>
+    </div>
+    <div class="wrap">
+        <h1 class="item">你好</h1>
+        <span></span>
+        <h1 class="item">哈哈</h1>
+    </div>
+    <div class="wrap">
+        <h1 class="item">你好</h1>
+        <span></span>
+        <h1 class="item">哈哈</h1>
+    </div>
+    <div class="wrap">
+        <h1 class="item">你好</h1>
+        <span></span>
+        <h1 class="item">哈哈</h1>
+    </div>
+    <div class="wrap">
+        <h1 class="item">你好</h1>
+        <span></span>
+        <h1 class="item">哈哈</h1>
+    </div>
+    <div class="wrap">
+        <h1 class="item">你好</h1>
+        <span></span>
+        <h1 class="item">哈哈</h1>
+    </div>
+    <div class="wrap">
+        <h1 class="item">你好</h1>
+        <span></span>
+        <h1 class="item">哈哈</h1>
+    </div>
+    <div class="wrap">
+        <h1 class="item">你好</h1>
+        <span></span>
+        <h1 class="item">哈哈</h1>
+    </div>
+    <div class="wrap">
+        <h1 class="item">你好</h1>
+        <span></span>
+        <h1 class="item">哈哈</h1>
+    </div>
+    <div class="wrap">
+        <h1 class="item">你好</h1>
+        <span></span>
+        <h1 class="item">哈哈</h1>
+    </div>
+    <div class="wrap">
+        <h1 class="item">你好</h1>
+        <span></span>
+        <h1 class="item">哈哈</h1>
+    </div>
+    <div class="wrap">
+        <h1 class="item">你好</h1>
+        <span></span>
+        <h1 class="item">哈哈</h1>
+    </div>
+    <div class="wrap">
+        <h1 class="item">你好</h1>
+        <span></span>
+        <h1 class="item">哈哈</h1>
+    </div>
+    <div class="wrap">
+        <h1 class="item">你好</h1>
+        <span></span>
+        <h1 class="item">哈哈</h1>
+    </div>
+    <div class="wrap">
+        <h1 class="item">你好</h1>
+        <span></span>
+        <h1 class="item">哈哈</h1>
+    </div>
+    <div class="wrap">
+        <h1 class="item">你好</h1>
+        <span></span>
+        <h1 class="item">哈哈</h1>
+    </div>
+    <div class="wrap">
+        <h1 class="item">你好</h1>
+        <span></span>
+        <h1 class="item">哈哈</h1>
+    </div>
+    <div class="wrap">
+        <h1 class="item">你好</h1>
+        <span></span>
+        <h1 class="item">哈哈</h1>
+    </div>
+    <div class="wrap">
+        <h1 class="item">你好</h1>
+        <span></span>
+        <h1 class="item">哈哈</h1>
+    </div>
+    <div class="wrap">
+        <h1 class="item">你好</h1>
+        <span></span>
+        <h1 class="item">哈哈</h1>
+    </div>
+    <div class="wrap">
+        <h1 class="item">你好</h1>
+        <span></span>
+        <h1 class="item">哈哈</h1>
+    </div>
+    <div class="wrap">
+        <h1 class="item">你好</h1>
+        <span></span>
+        <h1 class="item">哈哈</h1>
+    </div>
+    <div class="wrap">
+        <h1 class="item">你好</h1>
+        <span></span>
+        <h1 class="item">哈哈</h1>
+    </div>
+
+
+    <script>
+        let wrapEL = document.querySelectorAll('.wrap')
+
+        // 屏幕高度
+        let screenHeight = window.innerHeight;
+
+        // 初始化
+        wrapEL.forEach(el => {
+            // 容器高度
+            let itemHeight = el.clientHeight;
+            if (el.offsetTop - window.scrollY < screenHeight && el.offsetTop - window.scrollY + itemHeight > 0) {
+                el.children[0].classList.add('h1')
+                el.children[2].classList.add('h2')
+            }
+        })
+
+        // 滚动监听
+        wrapEL.forEach(el => {
+            // 容器高度
+            let itemHeight = el.clientHeight;
+            window.addEventListener('scroll', (e) => {
+                window.requestAnimationFrame(() => {
+                    if (el.offsetTop - this.scrollY < screenHeight && el.offsetTop - this.scrollY + itemHeight > 0) {
+                        el.children[0].classList.add('h1')
+                        el.children[2].classList.add('h2')
+                    }
+                })
+            })
+        })
+    </script>
+</body>
+
+
+</html>
